@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — BlackMarket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ===== Вход ===== -->
+  <div class="auth" id="authScreen">
+    <div class="auth__box">
+      <span class="auth__logo">⚡</span>
+      <h1 class="auth__title" id="authTitle">Вход в админку</h1>
+      <p class="auth__hint" id="authHint">Введите пароль, чтобы управлять товарами.</p>
+
+      <form class="auth__form" id="authForm" novalidate>
+        <input class="field" type="password" id="passInput" placeholder="Пароль" autocomplete="current-password">
+        <input class="field" type="password" id="passInput2" placeholder="Повторите пароль" autocomplete="new-password" hidden>
+        <button class="btn btn--primary btn--block" type="submit" id="authSubmit">Войти</button>
+      </form>
+
+      <p class="auth__error" id="authError" hidden></p>
+      <p class="auth__note">Товары и пароль админа хранятся на сервере BlackMarket.</p>
+    </div>
+  </div>
+
+  <!-- ===== Панель ===== -->
+  <div id="adminPanel" hidden>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="index.html" class="logo">
+          <span class="logo__icon">⚡</span>
+          <span class="logo__text">BLACK<span>MARKET</span></span>
+        </a>
+        <span class="admin-badge">АДМИН-ПАНЕЛЬ</span>
+        <div class="header__actions">
+          <a class="btn btn--ghost btn--small" href="index.html">🏪 На сайт</a>
+          <button class="btn btn--ghost btn--small" id="logoutBtn">Выйти</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-main">
+
+      <div class="notice" id="storageNotice" hidden>
+        ⚠️ Сервер недоступен — изменения <b>не сохраняются</b>.
+        Убедитесь, что сервер запущен (<code>npm start</code>), и обновите страницу.
+      </div>
+
+      <div class="stats" id="stats"></div>
+
+      <div class="toolbar">
+        <button class="btn btn--primary btn--small" id="addBtn">＋ Добавить товар</button>
+        <button class="btn btn--ghost btn--small" id="changePassBtn">🔑 Сменить пароль</button>
+        <button class="btn btn--ghost btn--small" id="exportBtn">⬇ Экспорт JSON</button>
+        <label class="btn btn--ghost btn--small" title="Загрузить товары из файла">
+          ⬆ Импорт JSON
+          <input type="file" id="importInput" accept=".json,application/json" hidden>
+        </label>
+        <button class="btn btn--ghost btn--small btn--danger" id="resetBtn">↺ Сбросить всё</button>
+      </div>
+
+      <div class="passbox" id="passBox">
+        <h3 class="passbox__title">Смена пароля</h3>
+        <input class="field" type="password" id="oldPass" placeholder="Текущий пароль">
+        <input class="field" type="password" id="newPass" placeholder="Новый пароль (мин. 4 символа)">
+        <input class="field" type="password" id="newPass2" placeholder="Повторите новый пароль">
+        <div class="passbox__actions">
+          <button class="btn btn--primary btn--small" id="passSave">Сменить пароль</button>
+          <button class="btn btn--ghost btn--small" id="passCancel">Отмена</button>
+        </div>
+        <p class="auth__error" id="passError" hidden></p>
+      </div>
+
+      <div class="products" id="productsList"></div>
+      <p class="empty" id="emptyMsg" hidden>Товаров пока нет — нажмите «Добавить товар».</p>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackMarket — магазин аккаунтов Black Russia</title>
+  <meta name="description" content="Покупка аккаунтов Black Russia: 92 сервера, уровни 3–35, балансы и имущество. Без привязок, автовыдача, безопасная сделка и гарантия возврата.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon">⚡</span>
+        <span class="logo__text">BLACK<span>MARKET</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#catalog" class="nav__link">Каталог</a>
+        <a href="#how" class="nav__link">Как купить</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="btn-cart" id="cartBtn" aria-label="Корзина">
+          🛒 <span class="btn-cart__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Герой -->
+  <section class="hero">
+    <div class="hero__glow"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">⚡ Автовыдача · Без привязок · 92 сервера</div>
+        <h1 class="hero__title">Аккаунты <span>Black Russia</span> с гарантией</h1>
+        <p class="hero__subtitle">
+          Уровни 3–35, балансы до 262 млн ₽, машины, квартиры и VIP-статусы.
+          Каждый аккаунт проверен: без привязок и с регистрационными данными.
+          Безопасная сделка через эскроу и поддержка 24/7.
+        </p>
+        <div class="hero__buttons">
+          <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+          <a href="#how" class="btn btn--ghost">Как проходит сделка</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero-stat"><b>2 400+</b><span>сделок</span></div>
+          <div class="hero-stat"><b>4.9 ★</b><span>рейтинг</span></div>
+          <div class="hero-stat"><b>92</b><span>сервера</span></div>
+          <div class="hero-stat"><b>24/7</b><span>поддержка</span></div>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-card__level">№23 MOSCOW</div>
+          <div class="hero-card__avatar">🏎</div>
+          <div class="hero-card__name">18 уровень</div>
+          <div class="hero-card__tags">
+            <span class="tag tag--vip">Топовый</span>
+            <span class="tag">190 BC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог -->
+  <section class="section" id="catalog">
+    <div class="container">
+      <h2 class="section__title">Каталог аккаунтов</h2>
+      <p class="section__subtitle">Фильтруйте по серверу, категории и уровню — найдите нужный аккаунт</p>
+
+      <div class="filters">
+        <input type="text" class="filters__search" id="searchInput" placeholder="🔍 Поиск по названию или серверу...">
+        <select class="filters__select" id="serverSelect">
+          <option value="all">Все сервера</option>
+          <option value="color">Цветные (№01–22)</option>
+          <optgroup label="Городские">
+            <option value="№23 Moscow">№23 Moscow</option>
+            <option value="№24 SPB">№24 SPB</option>
+            <option value="№25 UFA">№25 UFA</option>
+            <option value="№27 Kazan">№27 Kazan</option>
+            <option value="№29 Rostov">№29 Rostov</option>
+            <option value="№31 EKB">№31 EKB</option>
+            <option value="№32 Krasnodar">№32 Krasnodar</option>
+            <option value="№34 Novosibirsk">№34 Novosibirsk</option>
+            <option value="№40 Voronezh">№40 Voronezh</option>
+            <option value="№44 Vladivostok">№44 Vladivostok</option>
+            <option value="№45 Kaliningrad">№45 Kaliningrad</option>
+            <option value="№46 Chelyabinsk">№46 Chelyabinsk</option>
+            <option value="№50 Perm">№50 Perm</option>
+            <option value="№51 Tula">№51 Tula</option>
+            <option value="№80 N.Novgorod">№80 N.Novgorod</option>
+            <option value="№84 Tomsk">№84 Tomsk</option>
+            <option value="№89 Cherepovets">№89 Cherepovets</option>
+            <option value="№90 Norilsk">№90 Norilsk</option>
+            <option value="№91 Astana">№91 Astana</option>
+            <option value="№92 Tashkent">№92 Tashkent</option>
+          </optgroup>
+        </select>
+        <div class="filters__group" id="categoryFilters">
+          <button class="chip chip--active" data-category="all">Все</button>
+          <button class="chip" data-category="start">Стартовые</button>
+          <button class="chip" data-category="mid">Развитые</button>
+          <button class="chip" data-category="top">Топовые</button>
+          <button class="chip" data-category="vip">VIP</button>
+        </div>
+        <select class="filters__select" id="sortSelect">
+          <option value="popular">По популярности</option>
+          <option value="price-asc">Цена: по возрастанию</option>
+          <option value="price-desc">Цена: по убыванию</option>
+          <option value="level-desc">Уровень: сначала высокий</option>
+          <option value="balance-desc">Баланс: сначала большой</option>
+        </select>
+      </div>
+
+      <div class="catalog" id="catalogGrid"></div>
+      <p class="catalog__empty" id="catalogEmpty" hidden>Ничего не найдено 😔 Попробуйте изменить фильтры.</p>
+    </div>
+  </section>
+
+  <!-- Как купить -->
+  <section class="section section--alt" id="how">
+    <div class="container">
+      <h2 class="section__title">Как купить аккаунт</h2>
+      <p class="section__subtitle">4 простых шага — и аккаунт ваш</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <h3 class="step__title">Выберите аккаунт</h3>
+          <p class="step__text">Сервер, уровень, баланс и имущество — всё видно в карточке. Добавьте в корзину.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <h3 class="step__title">Оформите заказ</h3>
+          <p class="step__text">Укажите контакты — менеджер свяжется с вами в течение 5 минут.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <h3 class="step__title">Проверка через эскроу</h3>
+          <p class="step__text">Деньги хранятся у посредника, пока вы не подтвердите доступ к аккаунту.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <h3 class="step__title">Получите данные</h3>
+          <p class="step__text">Логин, почта и рег. данные — сразу меняете пароль и почту на свои.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <p class="section__subtitle">Более 2 400 довольных игроков Black Russia</p>
+      <div class="reviews">
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Взял аккаунт 18 уровня на сервере Moscow — баланс и машины совпали с описанием, всё передали за 10 минут.»</p>
+          <div class="review__author"><span class="review__avatar">🦅</span> Eagle_one</div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Долго выбирал сервер, помог менеджер в чате. Эскроу — это надёжно: деньги не уходят, пока не получишь данные.»</p>
+          <div class="review__author"><span class="review__avatar">🐺</span> NightWolf</div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p class="review__text">«Второй раз беру здесь. Первый аккаунт живёт полгода: привязок нет, банов не было. Рекомендую!»</p>
+          <div class="review__author"><span class="review__avatar">🐲</span> Drakon4ik</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container container--narrow">
+      <h2 class="section__title">Частые вопросы</h2>
+      <div class="faq" id="faqList">
+        <details class="faq__item">
+          <summary class="faq__q">Что значит «без привязок»?</summary>
+          <div class="faq__a">К аккаунту не привязаны почта, телефон и соцсети продавца. Вы сразу меняете пароль и почту на свои — бывший владелец не сможет вернуть аккаунт обратно.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Безопасно ли покупать? Могут ли забанить?</summary>
+          <div class="faq__a">Каждый аккаунт проверяется перед продажей: нет активных банов и ограничений. Плюс действует гарантия возврата в течение 24 часов, если данные не подходят.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Что такое автовыдача?</summary>
+          <div class="faq__a">Данные от аккаунта приходят автоматически сразу после оплаты — в среднем 5–15 минут. В редких случаях (ночь, пик нагрузки) — до часа. Мы работаем 24/7.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Можно ли перевести аккаунт на другой сервер?</summary>
+          <div class="faq__a">Нет, сервер закреплён за аккаунтом. Выбирайте нужный сервер при покупке — у нас аккаунты на всех 92 серверах: цветных (№01–22) и городских (Москва, СПб, Казань, Краснодар и другие).</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Какие способы оплаты доступны?</summary>
+          <div class="faq__a">Банковские карты, СБП, электронные кошельки и криптовалюта. Для крупных заказов доступна оплата через эскроу-посредника.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Можно ли продать свой аккаунт Black Russia?</summary>
+          <div class="faq__a">Да! Оставьте заявку в поддержке — мы оценим аккаунт (уровень, баланс, имущество, сервер) и выкупим его или поместим в каталог.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="logo">
+        <span class="logo__icon">⚡</span>
+        <span class="logo__text">BLACK<span>MARKET</span></span>
+      </a>
+      <p class="footer__note">Магазин аккаунтов Black Russia. Не является официальным представителем BLACKHUB GAMES.</p>
+      <div class="footer__links">
+        <a href="#catalog">Каталог</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" onclick="return false">Правила сайта</a>
+        <a href="#" onclick="return false">Поддержка</a>
+        <a href="admin.html">Админка</a>
+      </div>
+      <p class="footer__copy">© 2026 BlackMarket</p>
+    </div>
+  </footer>
+
+  <!-- Корзина -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart" id="cart" aria-label="Корзина">
+    <div class="cart__head">
+      <h3>Корзина</h3>
+      <button class="cart__close" id="cartClose" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="cart__items" id="cartItems"></div>
+    <div class="cart__foot">
+      <div class="cart__total">Итого: <b id="cartTotal">0 ₽</b></div>
+      <button class="btn btn--primary btn--block" id="checkoutBtn">Оформить заказ</button>
+    </div>
+  </aside>
+
+  <!-- Модалка -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal__icon" id="modalIcon">✅</div>
+      <h3 class="modal__title" id="modalTitle">Заказ принят!</h3>
+      <p class="modal__text" id="modalText">Менеджер свяжется с вами в течение 5 минут.</p>
+      <button class="btn btn--primary" id="modalClose">Хорошо</button>
+    </div>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
